@@ -1,0 +1,28 @@
+<h1 class="text-center">Welcome to URL Shortener</h1>
+
+<p>Enter URL that you would like to shorten.</p>
+<input type="text" name="URL" id="url" placeholder="Enter URL">
+<button id="submit">Submit</button>
+
+<br>
+<p id="notif"></p>
+
+<script>
+    const setNotification = (x) => $("#notif").text(x);
+
+    $("#submit").on('click', function() {
+        axios.post("/", { url: $("#url").val() })
+            .then((res) => {
+                if (res.data.url) {
+                    const constructedURL = "https://" + window.location.host + "/" + res.data.url 
+                    setNotification(`URL has been created! ${constructedURL}`)
+                }
+                else if (res.data.views) {
+                    setNotification(`URL has ${res.data.views} views`)
+                } else setNotification("Missing URL value from request.")
+            })
+            .catch((err) => {
+                setNotification("An error has occured.")
+            })
+    })
+</script>
