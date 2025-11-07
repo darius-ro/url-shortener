@@ -4,7 +4,7 @@ This was made as my first github repo, nothing big.
 
 # How to run
 
-You need to have (NodeJS)[https://nodejs.org/] installed to run this.
+You need to have [NodeJS](https://nodejs.org/) installed to run this.
 
 Open a terminal in this project by downloading/cloning the repo to your machine.
 
@@ -15,7 +15,7 @@ npm i
 ```
 
 Before running the program, head over to .env.example and copy it to .env,
-then modify the file to contain valid credentials to a (MongoDB)[https://mongodb.com] server that could store your shortened urls!
+then modify the file to contain valid credentials to a [MongoDB](https://mongodb.com) server that could store your shortened urls!
 
 To then run the program run the following command:
 
